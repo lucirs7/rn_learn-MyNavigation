@@ -1,9 +1,22 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
-export default function Home() {
+export default function Home({navigation}) {
+  const [followRequest, setFollowRequest] = useState<Array<string>>(
+    ['John', 'Jane', 'Ram', 'Janice']);
+  const [following, setFollowing] = useState('Hitesh');
+
+  const follow = () => {
+    const followNew = followRequest.splice(index, 1);
+  };
+
   return (
     <View style={styles.container}>
         <Text>MyNavigation!</Text>
+        <Button
+          title='Go to follow'
+          onPress={() => navigation.navigate("Follow")}
+        />
     </View>
   );
 }
