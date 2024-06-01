@@ -1,6 +1,17 @@
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function Follow() {
+interface FollowParams {
+    followRequest_: String[];
+    follow_: String[];
+    followFunction: () => {};
+};
+
+export default function Follow<FollowParams> ({
+    followRequest_,
+    follow_,
+    followFunction,
+}) {
+  
   return (
     <View style={styles.container}>
         <Text>FOLLOW SCREEN</Text>
